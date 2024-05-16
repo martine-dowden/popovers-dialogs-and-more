@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+
+body {
+  --primary: #1c5792;
+  --primary-contrast: #fff;
+  --accent: #c78800;
+  --backdrop: #d9e6f3aa;
+  --border: #b8bec4;
+  --shadow: rgba(56, 113, 174, 0.247);
+  font-family: sans-serif;
+  text-align: center;
+  padding: 4rem;
+}
+
+button {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border: none;
+  padding: .5rem 2rem;
+  border-radius: 24px;
+}
+dialog button[type="button"] {
+  background: none;
+  color: var(--primary);
+}
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+input {
+  display: block;
+  padding: .5rem;
+  border: solid 1px var(--border);
+  border-radius: 4px;
+  margin-bottom: .5rem;
+  text-align: center;
+  width: 100%;
+}
+input:hover, input:focus { outline-color: var(--primary); }
+
+output { margin: 1rem 0; }
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+dialog {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  box-shadow:
+    0 1px 1px var(--shadow),
+    0 2px 2px var(--shadow),
+    0 4px 4px var(--shadow);
+  padding: 2rem;
+
+
+  opacity: 0;
+  transform: scale(0);
+  transition: all .5s ease-in allow-discrete;
+}
+dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+}
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+dialog::backdrop {
+  background: rgb(85 142 198 / 0);
+  transition: all 1s allow-discrete;
+}
+dialog[open]::backdrop {
+  background: rgb(85 142 198 / 0.25);
+}
+@starting-style {
+  dialog[open]::backdrop {
+    background-color: rgb(85 142 198 / 0);
+  }
+}

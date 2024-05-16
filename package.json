@@ -1,0 +1,12 @@
+{
+  "name": "popovers-dialogs-and-more",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server --port=8080"
+  },
+  "author": "Martine Dowden",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
