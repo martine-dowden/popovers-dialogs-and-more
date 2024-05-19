@@ -1,4 +1,4 @@
-# Popovers, toasts, dialogs, tooltips and more - Popovers, not just for dinner for your websites too
+# Popovers, toasts, dialogs, tooltips and more
 
 Code samples used in [Martine Dowden](https://martine.dev)'s conference presentation: [Popovers, Toasts, Dialogs, Tooltips and more](https://martine.dev/publications/popovers).
 
