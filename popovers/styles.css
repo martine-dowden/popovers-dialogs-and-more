@@ -94,10 +94,10 @@ button.definition {
   position-try-order: most-width;
   
   /* Animation */
-  transform-origin: 50% 0;
+  /* transform-origin: 50% 0;
   transition: all 250ms ease-in allow-discrete;
   @starting-style { scale: 0; }
-  &::popover-open { scale: 1; }
+  &::popover-open { scale: 1; } */
 }
 
 /** TOOLTIP **/
