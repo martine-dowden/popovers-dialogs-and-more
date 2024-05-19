@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Select Lists</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+
+  <meta name="author" content="Martine Dowden">
+  <meta name="keywords" content="CSS, popover, dialog, tooltip">
+  <meta name="description"
+    content="Code samples use to explain CSS and JavaScript concepts revolving around dialogs, tooltips, and popovers">
+</head>
+
+<body>
+
+  <main>
+    <h1>Select List</h1>
+
+    <form>
+      <label>Please select a font style</label>
+      <selectlist>
+        <button class="trigger" type="selectlist">
+          <span>Style Selected: <strong>
+              <selectedoption></selectedoption>
+            </strong></span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px">
+            <path d="M480-360 280-560h400L480-360Z" />
+          </svg>
+        </button>
+
+        <listbox popover>
+          <option value>body text</option>
+          <option class="h1" value="1">Heading 1</option>
+          <option class="h2" value="2">Heading 2</option>
+          <option class="code" value="3">Code</option>
+        </listbox>
+      </selectlist>
+    </form>
+
+    <p class="ciu_embed" data-feature="selectlist" data-periods="future_1,current,past_1,past_2"
+      data-accessible-colours="false">
+      <picture>
+        <source type="image/webp" srcset="https://caniuse.bitsofco.de/image/selectlist.webp">
+        <source type="image/png" srcset="https://caniuse.bitsofco.de/image/selectlist.png">
+        <img src="https://caniuse.bitsofco.de/image/selectlist.jpg"
+          alt="Data on support for the selectlist feature across the major browsers from caniuse.com">
+      </picture>
+    </p>
+
+  </main>
+
+
+  <script src="./script.js"></script>
+</body>

@@ -1,5 +1,10 @@
 * { box-sizing: border-box; }
 
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   --primary: #1c5792;
   --primary-contrast: #fff;
@@ -9,7 +14,10 @@ body {
   --shadow: rgba(56, 113, 174, 0.247);
   font-family: sans-serif;
   text-align: center;
-  padding: 4rem;
+}
+
+main {
+  padding: 1rem 4rem;
 }
 
 button {

@@ -1,0 +1,101 @@
+* { box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --primary: #1c5792;
+  --primary-contrast: #fff;
+  --accent: #ffd270;
+  --accent-contrast: #515151;
+  --backdrop: #d9e6f3aa;
+  --border: #b8bec4;
+  --shadow: rgba(56, 113, 174, 0.247);
+  --info-background: #f2f8ff;
+  font-family: sans-serif;
+}
+
+main {
+  padding: 1rem 4rem;
+  /* padding: 0; */
+}
+
+label {
+  display: block;
+  margin-bottom: .5ex;
+  margin-left: 2rem;
+}
+
+.warning {
+  background: var(--accent);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+selectlist {
+  display: block;
+  width: 100%;
+  button {
+    background: var(--primary);
+    color: var(--primary-contrast);
+    fill:  var(--primary-contrast);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 1rem 1rem 2rem;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 32px;
+  }
+  svg { transition: rotate 250ms linear; }
+  &:open svg {
+    rotate: -180deg;
+  }
+}
+
+listbox {
+  padding: 0;
+  margin-bottom: 0;
+  top: anchor(bottom);
+  box-shadow: 0 0 4px var(--shadow);
+  border: none;
+  transform: translateY(0);
+  transition: transform 250ms ease-in allow-discrete;
+  @starting-style { transform: translateY(100%); }
+  &::popover-open { transform: translateY(0); }
+}
+
+option {
+  padding: 1rem;
+  border: solid 1px var(--border);
+  border-bottom: none;
+  background-color: var(--info-background);
+  font-size: 1rem;
+  &:where(:hover, :focus) {
+    background-color: var(--primary);
+    color: var(--primary-contrast);
+  }
+  &:checked {
+    background-color: var(--accent);
+    color: var(--accent-contrast);
+    background-image: url("img/check.svg");
+    background-position: calc(100% - 1rem) center;
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+  }
+}
+
+option.h1 { font-size: 2rem; }
+option.h2 { font-size: 1.5rem; }
+option.code { font-family: monospace; }
+
+.ciu_embed img {
+  display: block;
+  width: 800px;
+  max-width: 100%;
+  margin: 5rem auto 1rem;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Popovers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+
+  <meta name="author" content="Martine Dowden">
+  <meta name="keywords" content="CSS, popover, dialog, tooltip">
+  <meta name="description"
+    content="Code samples use to explain CSS and JavaScript concepts revolving around dialogs, tooltips, and popovers">
+</head>
+
+<body>
+
+  <nav>
+    <ul>
+      <li class="popover-tooltip">
+        <a class="trigger" popovertarget="homeTooltip" href="/">🏠</a>
+        <div id="homeTooltip" role="tooltip" popover>home</div>
+      </li>
+      <li><a href="." data-tooltip="documentation">🗒️</a></li>
+      <li><a href="." data-tooltip="contact">☎️</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>I ❤️ Coffee ☕</h1>
+
+    <p>Redeye half and half, froth french press body
+      <strong>cappuccino <button class="definition" popovertarget="cappuccino"><sup>ℹ️</sup></button></strong>
+      as coffee so sugar. Con panna skinny, whipped redeye
+      macchiato percolator decaffeinated. Aroma, as eu, lungo eu, fair trade, beans filter sugar at whipped.
+    </p>
+    <p>Mocha steamed, cup caramelization fair trade acerbic froth grounds. Turkish, half and half eu breve a french
+      press,
+      filter, pumpkin spice froth white est turkish. Roast aftertaste variety fair trade extraction, rich trifecta
+      viennese kopi-luwak cinnamon frappuccino aftertaste.</p>
+    <p>Turkish café au lait siphon french press decaffeinated dark rich filter. In cinnamon single origin pumpkin spice
+      con panna arabica aftertaste qui doppio spoon. Acerbic cinnamon decaffeinated roast trifecta con panna cinnamon.
+    </p>
+
+    <button class="primary" type="button" popovertarget="myPopover">Hello World!</button>
+
+    <div class="greetings" popover id="myPopover">Greetings, one and all! Have you had your cup of coffee today?</div>
+
+    <div class="definition" popover id="cappuccino">
+      noun. <ruby>cap·​puc·​ci·​no ˌka-pə-ˈchē-(ˌ)nō ˌkä-pü-</ruby>: espresso coffee topped with frothed hot milk or
+      cream and often flavored with cinnamon.
+    </div>
+  </main>
+
+
+  <script src="./script.js"></script>
+</body>

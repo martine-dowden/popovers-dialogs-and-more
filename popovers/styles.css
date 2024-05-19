@@ -1,0 +1,160 @@
+* { box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --primary: #1c5792;
+  --primary-contrast: #fff;
+  --accent: #c78800;
+  --backdrop: #d9e6f3aa;
+  --border: #b8bec4;
+  --shadow: rgba(56, 113, 174, 0.247);
+  --info-background: #e6eef7;
+  font-family: sans-serif;
+}
+
+main {
+  padding: 1rem 4rem;
+  /* padding: 0; */
+}
+
+p {
+  line-height: 1.5;
+  text-align: justify;
+  columns: 1;
+  hyphens: auto;
+}
+
+ruby { display:  inline;}
+
+button.primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border: none;
+  padding: .5rem 2rem;
+  border-radius: 24px;
+}
+
+/** GREETINGS POPOVER **/
+
+.greetings[popover] {
+  /* Theming */
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-radius: 8px;
+  border: none;
+  
+  /* Position */
+  margin-bottom: 1rem;
+  top: anchor(bottom);
+
+  /* Animation */
+  transform: translateY(0);
+  transition: all 100ms ease-in allow-discrete;
+
+  @starting-style { transform: translateY(100%); }
+  &::popover-open { transform: translateY(0); }
+}
+
+
+/** INFO POPOVER **/
+
+button.definition {
+  background: none;
+  padding: 0;
+  border: none;
+
+  anchor-name: --def-btn;
+}
+
+.definition[popover] {
+  font-size: .85rem;
+  max-width: 10rem;
+  margin: 0.25rem 0;
+  padding: 0.75rem;
+  border: none;
+  background: var(--info-background);
+  border-radius: 4px;
+  box-shadow: 0 0 2px var(--shadow);
+
+  position-anchor: --def-btn;
+  
+  /* 
+    top: anchor(bottom);
+    left: anchor(center);
+    translate: -50% -0; 
+  */
+  
+  inset-area: bottom span-all;
+  position-try-options: --left, --right;
+  position-try-order: most-width;
+  
+  /* Animation */
+  transform-origin: 50% 0;
+  transition: all 250ms ease-in allow-discrete;
+  @starting-style { scale: 0; }
+  &::popover-open { scale: 1; }
+}
+
+/** TOOLTIP **/
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  font-size: 2rem;
+  background: var(--primary);
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: .5rem 1rem;
+}
+
+nav a[data-tooltip]::before,
+[role="tooltip"] {
+  font-size: .75rem;
+  background: rgb(0 0 0 / .76);
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* CSS tooltip */
+nav a[data-tooltip] {
+  position: relative;
+  :where(&:hover, &:focus)::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50% 0;
+  }
+}
+
+/* popover tooltip */
+nav li.popover-tooltip {
+  [popovertarget] { anchor-name: --tooltip; }
+  [role="tooltip"][popover] {
+    margin: 0;
+    position-anchor: --tooltip;
+    inset-area: bottom span-all;
+    position-try-options: --left, --right;
+    position-try-order: most-width;
+  }
+}
+
+/** TRY OPTIONS **/
+
+@position-try --left { 
+  inset-area: bottom span-left;
+}
+@position-try --right { 
+  inset-area: bottom span-right;
+}

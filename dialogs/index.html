@@ -2,13 +2,21 @@
 <html lang="en">
 
 <head>
-    <title>Dialog Demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./styles.css">
-    <meta charset="UTF-8">
-  </head>
+  <title>Dialogs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
 
-  <body>
+  <meta name="author" content="Martine Dowden">
+  <meta name="keywords" content="CSS, popover, dialog, tooltip">
+  <meta name="description"
+    content="Code samples use to explain CSS and JavaScript concepts revolving around dialogs, tooltips, and popovers">
+</head>
+
+<body>
+
+  <main>
+    <h1>Dialogs</h1>
     <div class="question">
       <p>What is your favorite drink?</p>
       <button onclick="openDialog()" type="button">
@@ -19,7 +27,7 @@
     <p>
       Answer: <output></output>
     </p>
-    
+
     <dialog id="myDialog">
       <header></header>
       <form id="favoriteDrink" onsubmit="closeDialog(event, 'default')">
@@ -33,8 +41,7 @@
         <button type="button" onclick="closeDialog(event, 'cancel')">Cancel</button>
       </footer>
     </dialog>
+  </main>
 
-
-
-    <script src="./script.js"></script>
-  </body>
+  <script src="./script.js"></script>
+</body>
