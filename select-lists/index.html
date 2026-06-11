@@ -20,23 +20,24 @@
 
     <form>
       <label>Please select a font style</label>
-      <selectlist>
-        <button class="trigger" type="selectlist">
+      <select>
+        <button class="trigger" >
           <span>Style Selected: <strong>
-              <selectedoption></selectedoption>
+              <selectedcontent></selectedcontent>
             </strong></span>
           <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px">
             <path d="M480-360 280-560h400L480-360Z" />
           </svg>
         </button>
-
-        <listbox popover>
+        
+        <div class="listbox">
           <option value>body text</option>
           <option class="h1" value="1">Heading 1</option>
           <option class="h2" value="2">Heading 2</option>
           <option class="code" value="3">Code</option>
-        </listbox>
-      </selectlist>
+        </div>
+      </select>
+
     </form>
 
     <p class="ciu_embed" data-feature="selectlist" data-periods="future_1,current,past_1,past_2"

@@ -34,9 +34,18 @@ label {
   margin-bottom: 1rem;
 }
 
-selectlist {
+select,::picker(select) {
+  appearance: base-select;
+}
+::picker-icon { display: none; }
+
+select {
+  border: none;
+  background: none;
+  padding: 0;
   display: block;
   width: 100%;
+  &:hover { background: none; }
   button {
     background: var(--primary);
     color: var(--primary-contrast);
@@ -52,21 +61,20 @@ selectlist {
     border-radius: 32px;
   }
   svg { transition: rotate 250ms linear; }
-  &:open svg {
-    rotate: -180deg;
+  &:open {
+    svg { rotate: -180deg; }
+    button { border-radius: 32px 32px 0 0; }
   }
 }
 
-listbox {
+.listbox {
   padding: 0;
   margin-bottom: 0;
-  top: anchor(bottom);
   box-shadow: 0 0 4px var(--shadow);
   border: none;
   transform: translateY(0);
   transition: transform 250ms ease-in allow-discrete;
-  @starting-style { transform: translateY(100%); }
-  &::popover-open { transform: translateY(0); }
+  @starting-style { transform: translateY(-100%); }
 }
 
 option {
